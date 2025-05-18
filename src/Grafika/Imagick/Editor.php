@@ -785,8 +785,8 @@ final class Editor implements EditorInterface
             $imagick = $image->getCore()->coalesceImages();
 
             foreach ($imagick as $frame) {
-                $frame->resizeImage($newWidth, $newHeight, \Imagick::FILTER_BOX, 1, false);
-                $frame->setImagePage($newWidth, $newHeight, 0, 0);
+                $frame->resizeImage((int)$newWidth, (int)$newHeight, \Imagick::FILTER_BOX, 1, false);
+                $frame->setImagePage((int)$newWidth, (int)$newHeight, 0, 0);
             }
 
             // Assign new image with frames
@@ -794,9 +794,9 @@ final class Editor implements EditorInterface
                 $image->getType());
         } else { // Single frame image. Eg. JPEG, PNG
 
-            $image->getCore()->resizeImage($newWidth, $newHeight, \Imagick::FILTER_LANCZOS, 1, false);
+            $image->getCore()->resizeImage((int)$newWidth, (int)$newHeight, \Imagick::FILTER_LANCZOS, 1, false);
             // Assign new image
-            $image = new Image($image->getCore(), $image->getImageFile(), $newWidth, $newHeight,
+            $image = new Image($image->getCore(), $image->getImageFile(), (int)$newWidth, (int)$newHeight,
                 $image->getType());
         }
 
