@@ -798,8 +798,8 @@ final class Editor implements EditorInterface
             $image->getCore(),
             (int)$size,
             $angle,
-            $x,
-            $y,
+            (int)$x,
+            (int)$y,
             $colorResource,
             $font,
             $text
