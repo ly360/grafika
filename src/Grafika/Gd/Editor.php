@@ -796,7 +796,7 @@ final class Editor implements EditorInterface
 
         imagettftext(
             $image->getCore(),
-            $size,
+            (int)$size,
             $angle,
             $x,
             $y,
